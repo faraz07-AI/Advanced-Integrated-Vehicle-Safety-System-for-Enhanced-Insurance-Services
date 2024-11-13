@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Insurance ford detection Prediction</h1>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="months_as_customer" placeholder="months_as_customer" required="required" />
+        <input type="text" name="age" placeholder="age" required="required" />
+	<input type="text" name="policy_number" placeholder="policy_number" required="required" />
+	<input type="text" name="policy_state" placeholder="policy_state" required="required" />
+        <input type="text" name="policy_csl" placeholder="policy_csl" required="required" />
+        <input type="text" name="policy_deductable" placeholder="policy_deductable" required="required" />
+	<input type="text" name="policy_annual_premium" placeholder="policy_annual_premium" required="required" />
+	<input type="text" name="umbrella_limit" placeholder="umbrella_limit" required="required" />
+        <input type="text" name="insured_sex" placeholder="insured_sex" required="required" />
+        <input type="text" name="insured_education_level" placeholder="insured_education_level" required="required" />
+	<input type="text" name="insured_occupation" placeholder="insured_occupation" required="required" />
+	<input type="text" name="insured_hobbies" placeholder="insured_hobbies" required="required" />
+        <input type="text" name="insured_relationship" placeholder="insured_relationship" required="required" />
+        <input type="text" name="capital-gains" placeholder="capital-gains" required="required" />
+	<input type="text" name="capital-loss" placeholder="capital-loss" required="required" />
+	<input type="text" name="incident_type" placeholder="incident_type" required="required" />
+        <input type="text" name="collision_type" placeholder="collision_type" required="required" />
+        <input type="text" name="incident_severity" placeholder="incident_severity" required="required" />
+	<input type="text" name="authorities_contacted" placeholder="authorities_contacted" required="required" />
+	<input type="text" name="incident_state" placeholder="incident_state" required="required" />
+        <input type="text" name="incident_city" placeholder="incident_city" required="required" />
+        <input type="text" name="incident_hour_of_the_day" placeholder="incident_hour_of_the_day" required="required" />
+	<input type="text" name="number_of_vehicles_involved" placeholder="number_of_vehicles_involved" required="required" />
+	<input type="text" name="property_damage" placeholder="property_damage" required="required" />
+        <input type="text" name="bodily_injuries" placeholder="bodily_injuries" required="required" />
+        <input type="text" name="witnesses" placeholder="witnesses" required="required" />
+	<input type="text" name="police_report_available" placeholder="police_report_available" required="required" />
+	<input type="text" name="total_claim_amount" placeholder="total_claim_amount" required="required" />
+        <input type="text" name="injury_claim" placeholder="injury_claim" required="required" />
+        <input type="text" name="property_claim" placeholder="property_claim" required="required" />
+	<input type="text" name="vehicle_claim" placeholder="vehicle_claim" required="required" />
+	<input type="text" name="auto_make" placeholder="auto_make" required="required" />
+        <input type="text" name="auto_year" placeholder="auto_year," required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
